@@ -1,79 +1,50 @@
-import { useState } from 'react';
+import './index.css'
+import { Route, Routes } from 'react-router';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-function App() {
+import HeroSection from './components/HeroSection';
+import Whoweare from './components/Whoweare';
+import Products from './components/Products';
+import Footer from './components/Footer';
+import WhyChooseUs from './components/WhyChooseUs';
+import Header from './components/Header';
+
+const App = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 900,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 120,
+    });
+  }, []);
   return (
-    <>
-      <style>
-        {`
-          * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
-          }
+    <Routes>
+      <Route
+        path="/"
+        element={
+          // <div className="relative min-h-screen overflow-hidden bg-linear-to-br from-blue-50 via-indigo-50 to-purple-50">
+     
+            <div className="relative z-10">
+              {/* <Navbar /> */}
+              <Header />
+              <HeroSection />
+              <Whoweare />
 
-          body, html, #root {
-            height: 100%;
-            width: 100%;
-          }
+              <Products />
+              <WhyChooseUs />
+              <Footer />
+            
+            
+            </div>
+          // </div>
+        }
+      /> 
+    </Routes>
 
-          /* Full screen background */
-          .container {
-            height: 100vh;
-            width: 100vw;
-            background: linear-gradient(135deg, #0a0f24, #1a2751);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0;
-            overflow: hidden;
-          }
-
-          /* Bigger desktop-style section */
-          .content {
-            text-align: center;
-            width: 100%;
-          }
-
-          .title {
-            font-size: 4rem;
-            color: #fff;
-            font-weight: 700;
-            margin-bottom: 10px;
-          }
-
-          .subtitle {
-            font-size: 1.8rem;
-            color: #dcdcdc;
-            margin-bottom: 30px;
-          }
-
-          /* Loader */
-          .loader {
-            width: 55px;
-            height: 55px;
-            border: 5px solid transparent;
-            border-top: 5px solid #fff;
-            border-radius: 50%;
-            margin: 10px auto;
-            animation: spin 1s linear infinite;
-          }
-
-          @keyframes spin {
-            to { transform: rotate(360deg); }
-          }
-        `}
-      </style>
-
-      <div className="container">
-        <div className="content">
-          <h1 className="title">RY Internationals</h1>
-          <h3 className="subtitle">Coming Soon...</h3>
-          <div className="loader"></div>
-        </div>
-      </div>
-    </>
   );
 }
 
-export default App;
+export default App
