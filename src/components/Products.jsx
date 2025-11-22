@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 // Use local product images from the assets folder
-import bananapowder from "../assets/Products/banana powder.png";
-import guarGumpowder from "../assets/Products/guar gum powder.png";
-import jaggerypowder from "../assets/Products/jaggery.png";
-import onionpowder from "../assets/Products/onion powder.png";
+// Use public folder paths for product images (handles spaces in filenames)
+const bananapowder = "/Products/banana powder.png";
+const guarGumpowder = "/Products/guar gum powder.png";
+const jaggerypowder = "/Products/jaggery.png";
+const onionpowder = "/Products/onion powder.png";
 
 const products = [
   {

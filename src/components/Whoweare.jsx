@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import whoweare from "../assets/whoweare.png";
+import whoweare from "../assets/Whoweare.png";
 import containers from "../assets/containers.png";
 
 const Whoweare = () => {
