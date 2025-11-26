@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
 
 // Example: use your uploaded image for visual (replace/import as needed in your app)
 const exampleImg = "/mnt/data/ae7b0366-21b5-4ef6-b59a-48787635c236.png";
@@ -69,14 +67,9 @@ const features = [
 ];
 
 export default function WhyChooseUs() {
-  useEffect(() => {
-    AOS.init({ duration: 700, easing: "ease-in-out", once: true, offset: 120 });
-    AOS.refresh();
-  }, []);
-
   return (
     <section className="bg-white/0">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 lg:py-12">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center" data-aos="fade-up">
           <h2 className="text-4xl font-extrabold text-gray-900 mb-3">Why Choose RY International</h2>
@@ -87,7 +80,7 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Features grid */}
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 lg:mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f, i) => (
             <div
               key={f.id}
@@ -105,20 +98,6 @@ export default function WhyChooseUs() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* CTA */}
-        <div className="mt-10 text-center" data-aos="fade-up" data-aos-delay="700">
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-indigo-600 text-white font-medium shadow hover:bg-indigo-700 transition"
-            aria-label="Contact RY International"
-          >
-            Contact Our Trade Team
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
         </div>
       </div>
     </section>

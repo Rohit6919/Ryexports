@@ -13,23 +13,16 @@ const Header = () => {
 
   // Scroll or Navigate + Scroll
   const scrollToSection = (section) => {
-    if (location.pathname !== "/") {
-      navigate("/");
-      setTimeout(() => {
-        scroller.scrollTo(section, {
-          smooth: true,
-          duration: 500,
-          offset: -80,
-        });
-      }, 100);
-    } else {
-      scroller.scrollTo(section, {
-        smooth: true,
-        duration: 500,
-        offset: -80,
+    setMenuOpen(false);
+    
+    const element = document.getElementById(section);
+    if (element) {
+      const offsetTop = element.offsetTop - 80;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
       });
     }
-    setMenuOpen(false);
   };
 
   // Logo click
@@ -55,25 +48,19 @@ const Header = () => {
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-24 w-24 object-contain"
               />
             </div>
-            <span className="-ml-1 text-2xl font-bold text-gray-900 leading-none"> RyExports</span>
+            <span className="-ml-1 text-2xl font-bold text-gray-900 leading-none"> RyInternationals</span>
           </button>
 
 
           {/* Desktop Nav */}
           <ul className="hidden md:flex gap-6 text-gray-800  text-[20px]">
             <li><button onClick={() => scrollToSection("hero")} className="hover:text-blue-600 transition">Home</button></li>
-            <li><button onClick={() => scrollToSection("plans")} className="hover:text-blue-600 transition">Plans</button></li>
             <li><button onClick={() => scrollToSection("about")} className="hover:text-blue-600 transition">About Us</button></li>
-            <li><button onClick={() => scrollToSection("faq")} className="hover:text-blue-600 transition">FAQ</button></li>
-            <li><Link to="/login" className="hover:text-blue-600 transition">Login</Link></li>
+            <li><button onClick={() => scrollToSection("products")} className="hover:text-blue-600 transition">Products</button></li>
+            <li><button onClick={() => scrollToSection("contact")} className="hover:text-blue-600 transition">Contacts</button></li>
           </ul>
 
-          <Link
-            to="/signup"
-            className="hidden md:inline-block px-5 py-2 border border-gray-800 text-black font-semibold tracking-wide rounded-full transition duration-300 hover:bg-gray-300 hover:text-black"
-          >
-            SignUp
-          </Link>
+          
 
           <button className="md:hidden" onClick={() => setMenuOpen(true)}>
             <img src={menuIcon} alt="Menu" className="h-7 w-7" />
@@ -95,7 +82,7 @@ const Header = () => {
           <div className="flex items-center py-4 pl-5 pr-3 w-full ">
             <button onClick={handleLogoClick} className="flex items-center">
               <img src={logo} alt="EliteProWealth Logo" className="h-10 w-10" />
-              <span className="text-lg font-bold text-gray-800">RyExports</span>
+              <span className="text-lg font-bold text-gray-800">RyInternationals</span>
             </button>
           </div>
           <button
@@ -109,19 +96,9 @@ const Header = () => {
         {/* Mobile Links */}
         <ul className="flex flex-col px-6 py-6 mt-2 gap-5 text-gray-900  text-[18px]">
           <li><button onClick={() => scrollToSection("hero")}>Home</button></li>
-          <li><button onClick={() => scrollToSection("plans")}>Plans</button></li>
           <li><button onClick={() => scrollToSection("about")}>About Us</button></li>
-          <li><button onClick={() => scrollToSection("faq")}>FAQ</button></li>
-          <li><Link to="/login" onClick={() => setMenuOpen(false)}>Login</Link></li>
-          <li>
-            <Link
-              to="/signup"
-              className="inline-block mt-4 px-4 py-2 border border-gray-800 text-gray-600 rounded-full text-center hover:bg-gray-500 hover:text-white transition"
-              onClick={() => setMenuOpen(false)}
-            >
-              SignUp
-            </Link>
-          </li>
+          <li><button onClick={() => scrollToSection("products")}>Products</button></li>
+          <li><button onClick={() => scrollToSection("contact")}>Contacts</button></li>
         </ul>
       </div>
     </>

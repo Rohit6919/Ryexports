@@ -10,6 +10,7 @@ import Products from './components/Products';
 import Footer from './components/Footer';
 import WhyChooseUs from './components/WhyChooseUs';
 import Header from './components/Header';
+import Contact from './components/Contact';
 
 const App = () => {
   useEffect(() => {
@@ -26,22 +27,22 @@ const App = () => {
         path="/"
         element={
           // <div className="relative min-h-screen overflow-hidden bg-linear-to-br from-blue-50 via-indigo-50 to-purple-50">
-     
-            <div className="relative z-10">
-              {/* <Navbar /> */}
-              <Header />
-              <HeroSection />
-              <Whoweare />
 
-              <Products />
-              <WhyChooseUs />
-              <Footer />
-            
-            
-            </div>
+          <div className="relative z-10">
+            {/* <Navbar /> */}
+            <Header />
+            <HeroSection />
+            <Whoweare />
+            <Products />
+            <WhyChooseUs />
+            <Contact />
+            <Footer />
+
+
+          </div>
           // </div>
         }
-      /> 
+      />
     </Routes>
 
   );

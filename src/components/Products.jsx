@@ -56,16 +56,19 @@ export default function Products() {
   };
 
   return (
-    <section id="products" className="py-20 bg-gray-50">
+    <section id="products" className="py-6 lg:py-12 bg-gray-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12" data-aos="fade-up">
+        <div className="text-center mb-6 lg:mb-8" data-aos="fade-up">
           <h2 className="font-manrope font-extrabold text-4xl text-gray-900">Our Products</h2>
           <div className="mt-4 flex items-center justify-center gap-3">
             <div className="w-28 h-1 rounded-full bg-linear-to-r from-indigo-600 to-purple-600" />
           </div>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
             Discover our premium range of export-quality products — curated, tested and packaged with care.
+          </p>
+          <p className="mt-2 text-base text-indigo-600 font-medium">
+            ✦ We take custom orders as per your requirements
           </p>
         </div>
 
@@ -164,6 +167,7 @@ export default function Products() {
                 <div className="mt-6 text-sm text-gray-500">
                   <p><strong>Packaging:</strong> 25kg / 50kg options</p>
                   <p className="mt-2"><strong>Origin:</strong> India</p>
+                  <p className="mt-3 text-indigo-600 font-medium">✦ Custom orders available as per your requirements</p>
                 </div>
               </div>
             </div>
