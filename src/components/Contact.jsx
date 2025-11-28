@@ -128,7 +128,7 @@ const Contact = () => {
                     </div>
                     <div className="flex-1">
                       <h4 className="text-gray-900 font-bold text-base">Email Us</h4>
-                      <p className="text-gray-700 text-sm font-medium break-all">sales@ryexports.com</p>
+                      <p className="text-gray-700 text-sm font-medium break-all">exports@ryinternationals.com</p>
                     </div>
                   </div>
                 </div>
