@@ -5,8 +5,16 @@ const bananapowder = "/Products/banana powder.png";
 const guarGumpowder = "/Products/guar gum powder.png";
 const jaggerypowder = "/Products/jaggery.png";
 const onionpowder = "/Products/onion powder.png";
+const Vegatable ="/Products/Vegatable.png";
 
 const products = [
+  {
+    id: 0,
+    title: "Raw Vegatable",
+    desc: "Fresh, premium grade raw vegetables, selected for their quality and perfect for export",
+    img: Vegatable,
+    tag: "Food",
+  },
   {
     id: 1,
     title: "Banana Powder",
@@ -73,7 +81,7 @@ export default function Products() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
           {products.map((p, idx) => (
             <article
               key={p.id}
